@@ -14,9 +14,22 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email')->unique();
+
+            $table->string('email')->nullable()->unique();
             $table->timestamp('email_verified_at')->nullable();
+
+            $table->string('mobile')->unique();
+            $table->timestamp('mobile_verified_at')->nullable();
+
+            $table->enum('role', ['admin', 'teacher', 'student'])->default('student');
+
             $table->string('password');
+
+            $table->string('provider')->nullable();
+            $table->string('provider_id')->nullable();
+            $table->text('provider_token')->nullable();
+            $table->text('provider_refresh_token')->nullable();
+
             $table->rememberToken();
             $table->timestamps();
         });
