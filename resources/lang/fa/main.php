@@ -41,5 +41,6 @@ return [
 
     'validation-password-confirm' => 'رمز عبور با تکرار آن مطابقت ندارد',
     'validation-mobile' => 'یک شماره صحیح وارد نمایید',
+    'validation-unique' => 'شماره وارد شده معتبر نمی باشد'
 
 ];

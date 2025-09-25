@@ -28,6 +28,7 @@ class RegisterRequest extends FormRequest
         return [
             'password.confirmed' => __('main.validation-password-confirm'),
             'mobile.regex' => __('main.validation-mobile'),
+            'mobile.unique' => __('main.validation-unique'),
         ];
 
     }

@@ -3,7 +3,7 @@
 @section('title', __('main.register'))
 
 @section('content')
-    <form method="POST" action="{{route('register')}}" class="space-y-6 w-full sm:w-2/3 md:w-full xl:w-2/3 text-slate-800">
+    <form method="POST" action="{{route('register')}}" class="space-y-6 w-full sm:w-2/3 md:w-full xl:w-2/3 text-slate-800" id="registerForm">
         @csrf
 
         <!-- Header -->
@@ -147,6 +147,7 @@
 
         <button
             type="submit"
+            id="submitButton"
             class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 transition-colors duration-200 focus:outline-none focus:ring-1 focus:ring-blue-600 focus:ring-offset-2"
         >
             @lang('main.create-account')
@@ -201,3 +202,16 @@
         </div>
     </form>
 @endsection
+
+@push('scripts')
+    <script>
+        const registerForm = document.getElementById('registerForm');
+        const submitButton = document.getElementById('submitButton');
+
+        registerForm.addEventListener('submit', function() {
+            submitButton.disabled = true;
+            submitButton.textContent = 'در حال انجام...';
+            submitButton.classList.add('opacity-50', 'cursor-not-allowed');
+        });
+    </script>
+@endpush
