@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
 use App\Services\AuthService;
 use Illuminate\Contracts\View\View;
@@ -41,6 +42,23 @@ class AuthController extends Controller
         $request->session()->regenerateToken();
 
         return redirect()->route('login');
+    }
+
+    public function showLoginForm(): View
+    {
+        return view('auth.login');
+    }
+
+    public function login(LoginRequest $request): RedirectResponse
+    {
+        if ($this->authService->login($request->validated())) {
+            $request->session()->regenerate();
+            return redirect()->intended('dashboard');
+        }
+
+        return back()->withErrors([
+            'identifier' => __('main.credentials-error'),
+        ])->onlyInput('identifier');
     }
 
 }

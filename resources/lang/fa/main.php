@@ -41,6 +41,17 @@ return [
 
     'validation-password-confirm' => 'رمز عبور با تکرار آن مطابقت ندارد',
     'validation-mobile' => 'یک شماره صحیح وارد نمایید',
-    'validation-unique' => 'شماره وارد شده معتبر نمی باشد'
+    'validation-unique' => 'شماره وارد شده معتبر نمی باشد',
 
+    'login' => 'ورود',
+    'welcome-back' => 'خوش آمدید',
+    'login-to-account' => 'برای ادامه وارد حساب کاربری خود شوید',
+    'email-or-mobile' => 'ایمیل یا شماره موبایل',
+    'enter-email-or-mobile' => 'ایمیل یا موبایل خود را وارد کنید',
+    'remember-me' => 'مرا به خاطر بسپار',
+    'forgot-password' => 'رمز عبور خود را فراموش کرده‌اید؟',
+    'sign-in' => 'ورود به حساب کاربری',
+    'no-account' => 'حساب کاربری ندارید؟',
+    'create-account-link' => 'یکی بسازید',
+    'credentials-error' => 'اطلاعات وارد شده با رکوردهای ما مطابقت ندارند',
 ];
