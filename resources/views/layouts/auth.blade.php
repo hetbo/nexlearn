@@ -4,12 +4,14 @@
 
     <div class="min-h-screen flex">
         <!-- Content Side -->
-        <div class="w-full md:w-1/2 p-8 flex items-center justify-center dark:bg-neutral-800 dark:text-white">
-            @yield('content')
+        <div class="w-full md:w-1/2 overflow-y-auto">
+            <div class="p-8 flex items-center justify-center dark:bg-neutral-800 dark:text-white min-h-screen">
+                @yield('content')
+            </div>
         </div>
 
         <!-- Decorative blue Side -->
-        <div class="hidden md:block md:w-1/2 bg-gradient-to-br from-blue-500 via-blue-600 to-violet-700 relative overflow-hidden">
+        <div class="hidden md:block md:w-1/2 bg-gradient-to-br from-blue-500 via-blue-600 to-violet-700 fixed left-0 top-0 bottom-0">
             <!-- Geometric Pattern -->
             <div class="absolute inset-0 opacity-20">
                 <div class="absolute top-10 left-10 w-32 h-32 bg-white rounded-full"></div>
