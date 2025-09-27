@@ -9,6 +9,11 @@ Route::middleware('guest')->group(function () {
 
     Route::get('login', [AuthController::class, 'showLoginForm'])->name('login');
     Route::post('login', [AuthController::class, 'login'])->name('login');
+
+    Route::get('/otp', [AuthController::class, 'showOTPForm'])->name('otp.login');
+    Route::post('/otp/request', [AuthController::class, 'requestCode'])->name('otp.request');
+    Route::post('/otp/verify', [AuthController::class, 'verify'])->name('otp.verify');
+
 });
 
 Route::middleware('auth')->group(function () {

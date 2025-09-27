@@ -76,6 +76,17 @@
             @lang('main.sign-in')
         </button>
 
+        <!-- OTP Login Link -->
+        <div class="pt-2">
+            <a
+                href="{{ route('otp.login') }}"
+                class="w-full flex text-sm items-center justify-center text-blue-600 hover:bg-blue-50 py-3 px-8 transition-colors duration-200 focus:outline-none focus:ring-1 focus:ring-blue-600 focus:ring-offset-2"
+            >
+                @lang('main.login-with-otp')
+            </a>
+        </div>
+
+
         <!-- Divider -->
         <div class="relative my-8">
             <div class="absolute inset-0 flex items-center">
