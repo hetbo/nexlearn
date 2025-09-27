@@ -17,6 +17,8 @@ class User extends Authenticatable
         'provider_id',
         'provider_token',
         'provider_refresh_token',
+        'mobile_verified_at',
+        'email_verified_at',
     ];
 
     protected $hidden = [
